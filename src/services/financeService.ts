@@ -150,7 +150,7 @@ export const transactionService = {
       const date = new Date(t.date);
       return date.getMonth() === currentMonth && date.getFullYear() === currentYear;
     });
-    console.log(monthlyTransactions,"monthlyTransactions")
+    
     const totalIncome = monthlyTransactions
       .filter(t => t.type === 'income')
       .reduce((sum, t) => sum + t.amount, 0);

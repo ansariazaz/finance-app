@@ -49,7 +49,6 @@ const Dashboard = () => {
       try {
         await budgetService.updateSpending();
         const summaryData = await transactionService.getSummary();
-        console.log(summaryData,"summaryData")
         setSummary(summaryData);
       } catch (error) {
         console.error('Error fetching dashboard data:', error);
@@ -76,7 +75,7 @@ const Dashboard = () => {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold">Dashboard</h1>
+        <h1 className="text-3xl font-bold mt-4">Dashboard</h1>
       </div>
       
       {/* Financial Summary Cards */}

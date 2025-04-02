@@ -195,7 +195,7 @@ const Transactions = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between flex-col md:flex-row gap-4 mt-4">
         <h1 className="text-3xl font-bold">Transactions</h1>
         <Button onClick={() => {
           resetForm();

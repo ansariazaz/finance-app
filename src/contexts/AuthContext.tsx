@@ -60,9 +60,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     
     try {
       const foundUser = MOCK_USERS.find(u => u.email === email && u.password === password);
-      
+         console.log(foundUser, "foundUser")
       if (foundUser) {
         const { password: _, ...userWithoutPassword } = foundUser;
+        console.log(userWithoutPassword,"userWithoutPassword")
         setUser(userWithoutPassword);
         localStorage.setItem('finance_user', JSON.stringify(userWithoutPassword));
         toast.success("Successfully logged in!");

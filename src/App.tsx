@@ -10,8 +10,10 @@ import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import Register from "./pages/Register";
 function App() {
   const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-    const { isAuthenticated } = useAuth();
-    
+    const { isAuthenticated, isLoading } = useAuth();
+    if (isLoading) {
+      return <div>Loading...</div>;
+    }
     if (!isAuthenticated) {
       return <Navigate to="/login" replace />;
     }
