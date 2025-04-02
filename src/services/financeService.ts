@@ -22,7 +22,7 @@ export type Budget = {
 let TRANSACTIONS: Transaction[] = [
   {
     id: '1',
-    date: '202-08-15',
+    date: '2025-04-01',
     amount: 2000,
     category: 'Salary',
     description: 'Monthly salary',
@@ -30,7 +30,7 @@ let TRANSACTIONS: Transaction[] = [
   },
   {
     id: '2',
-    date: '2024-08-16',
+    date: '2025-04-02',
     amount: 500,
     category: 'Rent',
     description: 'Monthly rent payment',
@@ -38,7 +38,7 @@ let TRANSACTIONS: Transaction[] = [
   },
   {
     id: '3',
-    date: '2024-08-17',
+    date: '2025-04-02',
     amount: 50,
     category: 'Groceries',
     description: 'Weekly grocery shopping',
@@ -46,7 +46,7 @@ let TRANSACTIONS: Transaction[] = [
   },
   {
     id: '4',
-    date: '2024-08-18',
+    date: '2025-04-03',
     amount: 100,
     category: 'Utilities',
     description: 'Electricity bill',
@@ -54,7 +54,7 @@ let TRANSACTIONS: Transaction[] = [
   },
   {
     id: '5',
-    date: '2024-08-19',
+    date: '2025-04-04',
     amount: 300,
     category: 'Freelance',
     description: 'Website development project',
@@ -151,18 +151,18 @@ export const transactionService = {
       return date.getMonth() === currentMonth && date.getFullYear() === currentYear;
     });
     console.log(monthlyTransactions,"monthlyTransactions")
-    const totalIncome = TRANSACTIONS
+    const totalIncome = monthlyTransactions
       .filter(t => t.type === 'income')
       .reduce((sum, t) => sum + t.amount, 0);
       
-    const totalExpenses = TRANSACTIONS
+    const totalExpenses = monthlyTransactions
       .filter(t => t.type === 'expense')
       .reduce((sum, t) => sum + t.amount, 0);
       
     const netIncome = totalIncome - totalExpenses;
     
     // Get expense breakdown by category
-    const expenseByCategory = TRANSACTIONS
+    const expenseByCategory = monthlyTransactions
       .filter(t => t.type === 'expense')
       .reduce((acc: Record<string, number>, t) => {
         acc[t.category] = (acc[t.category] || 0) + t.amount;
