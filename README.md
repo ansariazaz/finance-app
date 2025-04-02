@@ -1,54 +1,81 @@
-# React + TypeScript + Vite
+Finance App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<!-- Overview -->
 
-Currently, two official plugins are available:
+Finance App is a web application built with React, Vite, and TypeScript that helps users track their income, expenses, and budgets efficiently. The app provides an intuitive interface to manage personal finances, ensuring users can monitor their financial health in real-time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<!-- Features -->
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+User Authentication: Secure login and registration using AuthContext, with session storage in localStorage.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Protected Routes: Restricts access to certain pages if the user is not logged in.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Income & Expense Tracking: Users can add, edit, and delete income and expense transactions.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Budget Management: Set and manage monthly budgets.
+
+Data Persistence: Saves user data in localStorage for easy retrieval.
+
+Responsive UI: Built with shadcn components for a modern and accessible design.
+
+
+<!-- Tech Stack -->
+
+Frontend: React (Vite, TypeScript)
+
+State Management: React Context API (AuthContext for authentication)
+
+UI Library: shadcn
+
+Storage: localStorage
+ 
+style: tailwind Css
+
+
+<!-- Installation -->
+
+Clone the repository:
+
+git clone https://github.com/ansariazaz/finance-app.git
+cd finance
+
+Install dependencies:
+
+npm install
+
+Start the development server:
+
+npm run dev
+
+<!-- Usage -->
+
+Register or log in to access the dashboard.
+
+Add income and expense transactions.
+
+Set budgets and track expenses accordingly.
+
+View your financial summary in a user-friendly dashboard.
+
+<!-- Folder Structure -->
+
+├── src
+│   ├── components  # Reusable UI components
+│   ├── context     # Authentication context 
+│   ├── pages       # Application pages (Dashboard, Login, Register, etc.)
+│   ├── services    # finance data 
+│   ├── lib         # Utility functions
+│   └── main.tsx    # Application entry point
+├── public          # Static assets
+├── package.json    # Project dependencies and scripts
+└── README.md       # Project documentation
+
+<!-- Authentication & Route Protection -->
+
+The app uses AuthContext to handle user authentication.
+
+User data (login state) is stored in localStorage.
+
+Protected routes restrict access to authenticated users only.
