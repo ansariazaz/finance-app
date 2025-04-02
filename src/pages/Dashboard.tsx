@@ -174,7 +174,7 @@ const Dashboard = () => {
                     labelFormatter={(label) => `${label}`}
                   />
                   <Bar dataKey="value">
-                    {overviewData.map((entry, index) => (
+                    {overviewData.map((_, index) => (
                       <Cell 
                         key={`cell-${index}`} 
                         fill={index === 0 ? '#10B981' : '#EF4444'}
