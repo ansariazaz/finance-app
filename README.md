@@ -1,12 +1,12 @@
 Finance App
 
-<!-- Overview -->
+Overview
 
 Finance App is a web application built with React, Vite, and TypeScript that helps users track their income, expenses, and budgets efficiently. The app provides an intuitive interface to manage personal finances, ensuring users can monitor their financial health in real-time.
 
 
 
-<!-- Features -->
+Features
 
 User Authentication: Secure login and registration using AuthContext, with session storage in localStorage.
 
@@ -21,7 +21,7 @@ Data Persistence: Saves user data in localStorage for easy retrieval.
 Responsive UI: Built with shadcn components for a modern and accessible design.
 
 
-<!-- Tech Stack -->
+Tech Stack
 
 Frontend: React (Vite, TypeScript)
 
@@ -34,7 +34,7 @@ Storage: localStorage
 style: tailwind Css
 
 
-<!-- Installation -->
+Installation
 
 Clone the repository:
 
@@ -49,7 +49,7 @@ Start the development server:
 
 npm run dev
 
-<!-- Usage -->
+Usage
 
 Register or log in to access the dashboard.
 
@@ -59,7 +59,7 @@ Set budgets and track expenses accordingly.
 
 View your financial summary in a user-friendly dashboard.
 
-<!-- Folder Structure -->
+Folder Structure
 
 ├── src
 │   ├── components  # Reusable UI components
@@ -72,7 +72,7 @@ View your financial summary in a user-friendly dashboard.
 ├── package.json    # Project dependencies and scripts
 └── README.md       # Project documentation
 
-<!-- Authentication & Route Protection -->
+Authentication & Route Protection
 
 The app uses AuthContext to handle user authentication.
 
