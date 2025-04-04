@@ -232,7 +232,7 @@ const Budgets = () => {
                       </DropdownMenuContent>
                     </DropdownMenu>
                   </div>
-                  <CardDescription>{budget.period} budget</CardDescription>
+                  <CardDescription className='text-left'>{budget.period} budget</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
@@ -447,7 +447,7 @@ const Budgets = () => {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={handleDelete} className="bg-destructive text-destructive-foreground">
+            <AlertDialogAction onClick={handleDelete} className="bg-destructive text-destructive-foreground hover:bg-red-800">
               Delete
             </AlertDialogAction>
           </AlertDialogFooter>

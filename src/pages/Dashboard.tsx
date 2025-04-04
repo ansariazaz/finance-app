@@ -80,8 +80,8 @@ const Dashboard = () => {
       
       {/* Financial Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card className="card-shadow">
-          <CardHeader className="pb-2">
+        <Card className="card-shadow gap-2 justify-center">
+          <CardHeader>
             <CardTitle className="text-sm font-medium text-muted-foreground">
               Total Income
             </CardTitle>
@@ -90,7 +90,7 @@ const Dashboard = () => {
             {loading ? (
               <Skeleton className="h-8 w-28" />
             ) : (
-              <div className="flex items-center">
+              <div className="flex items-center justify-center">
                 <ArrowUp className="mr-2 h-4 w-4 text-positive" />
                 <span className="text-2xl font-bold">
                   {formatCurrency(summary.totalIncome)}
@@ -100,8 +100,8 @@ const Dashboard = () => {
           </CardContent>
         </Card>
         
-        <Card className="card-shadow">
-          <CardHeader className="pb-2">
+        <Card className="card-shadow gap-2 justify-center">
+          <CardHeader >
             <CardTitle className="text-sm font-medium text-muted-foreground">
               Total Expenses
             </CardTitle>
@@ -110,7 +110,7 @@ const Dashboard = () => {
             {loading ? (
               <Skeleton className="h-8 w-28" />
             ) : (
-              <div className="flex items-center">
+              <div className="flex items-center justify-center">
                 <ArrowDown className="mr-2 h-4 w-4 text-negative" />
                 <span className="text-2xl font-bold">
                   {formatCurrency(summary.totalExpenses)}
@@ -120,8 +120,8 @@ const Dashboard = () => {
           </CardContent>
         </Card>
         
-        <Card className="card-shadow">
-          <CardHeader className="pb-2">
+        <Card className="card-shadow gap-2 justify-center">
+          <CardHeader>
             <CardTitle className="text-sm font-medium text-muted-foreground">
               Net Income
             </CardTitle>
@@ -130,7 +130,7 @@ const Dashboard = () => {
             {loading ? (
               <Skeleton className="h-8 w-28" />
             ) : (
-              <div className="flex items-center">
+              <div className="flex items-center justify-center">
                 <Wallet className="mr-2 h-4 w-4 text-primary" />
                 <span className={`text-2xl font-bold ${summary.netIncome >= 0 ? 'text-positive' : 'text-negative'}`}>
                   {formatCurrency(summary.netIncome)}
@@ -232,7 +232,7 @@ const Dashboard = () => {
         <CardHeader>
           <div className="flex justify-between items-center">
             <div>
-              <CardTitle>Recent Transactions</CardTitle>
+              <CardTitle className='text-left'>Recent Transactions</CardTitle>
               <CardDescription>Your latest financial activity</CardDescription>
             </div>
             <Button 
@@ -278,8 +278,8 @@ const Dashboard = () => {
                       )}
                     </div>
                     <div>
-                      <p className="font-medium">{transaction.description}</p>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="font-medium text-left">{transaction.description}</p>
+                      <p className="text-xs text-muted-foreground text-left">
                         {transaction.category} • {new Date(transaction.date).toLocaleDateString()}
                       </p>
                     </div>

@@ -278,7 +278,7 @@ const Transactions = () => {
                 <TableBody>
                   {filteredTransactions.map((transaction) => (
                     <TableRow key={transaction.id}>
-                      <TableCell>
+                      <TableCell className="text-left">
                         <div className={`p-1.5 rounded-full inline-flex ${
                           transaction.type === 'income' ? 'bg-positive/10' : 'bg-negative/10'
                         }`}>
@@ -289,9 +289,9 @@ const Transactions = () => {
                           )}
                         </div>
                       </TableCell>
-                      <TableCell>{new Date(transaction.date).toLocaleDateString()}</TableCell>
-                      <TableCell>{transaction.description}</TableCell>
-                      <TableCell>{transaction.category}</TableCell>
+                      <TableCell className="text-left">{new Date(transaction.date).toLocaleDateString()}</TableCell>
+                      <TableCell className="text-left">{transaction.description}</TableCell>
+                      <TableCell className="text-left">{transaction.category}</TableCell>
                       <TableCell className={`text-right font-medium ${
                         transaction.type === 'income' ? 'text-positive' : 'text-negative'
                       }`}>
@@ -561,7 +561,7 @@ const Transactions = () => {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={handleDelete} className="bg-destructive text-destructive-foreground">
+            <AlertDialogAction onClick={handleDelete} className="bg-destructive text-destructive-foreground hover:bg-red-800">
               Delete
             </AlertDialogAction>
           </AlertDialogFooter>
